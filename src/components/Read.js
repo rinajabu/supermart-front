@@ -3,12 +3,18 @@ import './Read.css';
 
 const Read = (props) => {
     return (
-        <div className="product">
-            <h4>Name: {props.product.name}</h4>
-            <h4>Category: {props.product.category}</h4>
-            <h4>Price: ${props.product.price}</h4>
-            <h4>Description: {props.product.description}</h4>
-            <img src={props.product.picture} alt={props.product.name} />
+        <div className="products">
+            {props.products.map(product => {
+                return (
+                    <div className="product">
+                        <h4>Category: {product.category}</h4>
+                        <h4>Name: {product.name}</h4>
+                        <h4>Price: ${product.price}</h4>
+                        <h4>Description: {product.description}</h4>
+                        <img src={product.picture} alt={product.name} />
+                    </div>
+                )
+            })}
         </div>
     )
 }

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Read from './components/Read';
+import Create from './components/Create';
+import Header from './components/Header';
 
 const App = () => {
 
@@ -22,16 +25,20 @@ const App = () => {
     }, [])
 
     return (
-        <div>
-              <h1>Supermart</h1>
-              <div className="products">
-                  {products.map(product => {
-                      return (
-                          <Read product={product} />
-                      )
-                  })}
-              </div>
-        </div>
+      <Router>
+          <div className="app">
+              <Switch>
+                  <Route path="/create">
+                      <Header />
+                      <Create />
+                  </Route>
+                  <Route path="/">
+                      <Header />
+                      <Read products={products} />
+                  </Route>
+              </Switch>
+          </div>
+      </Router>
     )
 }
 
