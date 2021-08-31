@@ -21,9 +21,12 @@ const App = () => {
     // }
 
     const getProducts = async () => {
-        let response = await axios('https://supermart-back.herokuapp.com/api/products');
-        let results = await response.data;
-        setProducts(results);
+        try {
+            let response = await axios('https://supermart-back.herokuapp.com/api/products');
+            setProducts(response.data);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {
