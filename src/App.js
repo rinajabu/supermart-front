@@ -5,6 +5,7 @@ import './App.css';
 import Read from './components/Read';
 import Create from './components/Create';
 import Header from './components/Header';
+import Edit from './components/Edit';
 
 const App = () => {
 
@@ -14,6 +15,15 @@ const App = () => {
         try {
             let response = await axios.post('https://supermart-back.herokuapp.com/api/products', addProduct);
             console.log(response); // DELETE WHEN DONE
+            getProducts();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const handleDelete = async (event) => {
+        try {
+            let response = await axios.delete(`https://supermart-back.herokuapp.com/api/products/${event.target.value}`);
             getProducts();
         } catch (error) {
             console.log(error);
@@ -41,9 +51,16 @@ const App = () => {
                       <Header />
                       <Create handleCreate={handleCreate} />
                   </Route>
+                  <Route path="/edit">
+                      <Header />
+                      <Edit />
+                  </Route>
                   <Route path="/">
                       <Header />
-                      <Read products={products} />
+                      <Read 
+                          handleDelete={handleDelete} 
+                          products={products} 
+                      />
                   </Route>
               </Switch>
           </div>
