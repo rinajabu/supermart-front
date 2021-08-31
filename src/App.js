@@ -10,19 +10,19 @@ const App = () => {
 
     let [products, setProducts] = useState([]);
 
-    // const getProducts = () => {
-    //     axios
-    //         .get('https://supermart-back.herokuapp.com/api/products')
-    //         .then(
-    //             (response) => setProducts(response.data),
-    //             (err) => console.error(err)
-    //         )
-    //         .catch((error) => console.error(error))
-    // }
+    const handleCreate = async (addProduct) => {
+        try {
+            let response = await axios.post('https://supermart-back.herokuapp.com/api/products', addProduct);
+            console.log(response); // DELETE WHEN DONE
+            getProducts();
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const getProducts = async () => {
         try {
-            let response = await axios('https://supermart-back.herokuapp.com/api/products');
+            let response = await axios.get('https://supermart-back.herokuapp.com/api/products');
             setProducts(response.data);
         } catch (error) {
             console.log(error);
@@ -39,7 +39,7 @@ const App = () => {
               <Switch>
                   <Route path="/create">
                       <Header />
-                      <Create />
+                      <Create handleCreate={handleCreate} />
                   </Route>
                   <Route path="/">
                       <Header />
