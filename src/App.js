@@ -10,14 +10,23 @@ const App = () => {
 
     let [products, setProducts] = useState([]);
 
-    const getProducts = () => {
-        axios
-            .get('https://supermart-back.herokuapp.com/api/products')
-            .then(
-                (response) => setProducts(response.data),
-                (err) => console.error(err)
-            )
-            .catch((error) => console.error(error))
+    // const getProducts = () => {
+    //     axios
+    //         .get('https://supermart-back.herokuapp.com/api/products')
+    //         .then(
+    //             (response) => setProducts(response.data),
+    //             (err) => console.error(err)
+    //         )
+    //         .catch((error) => console.error(error))
+    // }
+
+    const getProducts = async () => {
+        try {
+            let response = await axios('https://supermart-back.herokuapp.com/api/products');
+            setProducts(response.data);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {
