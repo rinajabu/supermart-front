@@ -7,6 +7,7 @@ import Create from './components/Create';
 import Header from './components/Header';
 import Edit from './components/Edit';
 import Filter from './components/Filter';
+import Checkout from './components/Checkout';
 
 const App = () => {
 
@@ -61,19 +62,20 @@ const App = () => {
     return (
       <Router>
             <div className="app">
+                <Header />
                 <Switch>
                     <Route path="/create">
-                        <Header />
                         <Create handleCreate={handleCreate} />
                     </Route>
+                    <Route path='/checkout'>
+                        <Checkout />
+                    </Route>
                     <Route path="/edit/:id">
-                        <Header />
                         <Edit 
                             handleUpdate={handleUpdate}
                         />
                     </Route>
                     <Route path="/">
-                        <Header />
                         <Filter 
                             filterBy={filterBy}
                             updateFilter={updateFilter}
