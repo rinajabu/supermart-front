@@ -11,8 +11,11 @@ const Header = (props) => {
             <div className="header_nav">
                 <div className="header_createForm">
                     <Link to='/create'>
-                    <span className="header_createFormButton">Create</span>
+                    <div className="header_createFormButton">Create</div>
                     </Link>
+                </div>
+                <div className="header_cart">
+                    Cart: 0
                 </div>
             </div>
         </div>
