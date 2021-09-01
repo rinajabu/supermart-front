@@ -9,14 +9,7 @@ const Product = (props) => {
     const addToCart = () => {
         dispatch({
             type: "ADD_TO_CART",
-            item: { ...props.product
-                // id: props.product.id,
-                // category: props.product.category,
-                // name: props.product.name,
-                // price: props.product.price,
-                // description: props.product.description,
-                // picture: props.product.picture
-            }
+            item: { ...props.product }
         })
     }
 
