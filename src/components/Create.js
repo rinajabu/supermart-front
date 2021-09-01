@@ -46,7 +46,7 @@ const Create = (props) => {
                 <input type="text" name="description" onChange={handleChange} required />
                 <br />
                 <label htmlFor="picture">Product Picture: </label>
-                <input type="url" name="picture" onChange={handleChange} required />
+                <input type="url" name="picture" onChange={handleChange} maxLength="1000" required />
                 <div>Picture Preview: </div>
                 <img src={product.picture} />
                 <br />
