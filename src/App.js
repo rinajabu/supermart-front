@@ -30,6 +30,15 @@ const App = () => {
         }
     }
 
+    const handleUpdate = async (editProduct) => {
+        try {
+            let response = await axios.put(`https://supermart-back.herokuapp.com/api/products/${editProduct.id}`, editProduct);
+            getProducts();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const getProducts = async () => {
         try {
             let response = await axios.get('https://supermart-back.herokuapp.com/api/products');
@@ -51,9 +60,11 @@ const App = () => {
                       <Header />
                       <Create handleCreate={handleCreate} />
                   </Route>
-                  <Route path="/edit">
+                  <Route path="/edit/:id">
                       <Header />
-                      <Edit />
+                      <Edit 
+                          handleUpdate={handleUpdate}
+                      />
                   </Route>
                   <Route path="/">
                       <Header />
