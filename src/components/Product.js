@@ -1,7 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../StateProvider';
 
 const Product = (props) => {
+
+    const [{cart}, dispatch] = useStateValue();
+
+    const addToCart = () => {
+        dispatch({
+            type: "ADD_TO_CART",
+            item: { ...props.product
+                // id: props.product.id,
+                // category: props.product.category,
+                // name: props.product.name,
+                // price: props.product.price,
+                // description: props.product.description,
+                // picture: props.product.picture
+            }
+        })
+    }
+
     return (
         <>
             <div className="product">
@@ -30,7 +48,7 @@ const Product = (props) => {
                     Edit
                 </button>
                 </Link>
-                <button>Add to Cart</button>
+                <button onClick={addToCart}>Add to Cart</button>
             </div>
         </>
     )
