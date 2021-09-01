@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import './Create.css'
 
 const Create = (props) => {
+
+    const history = useHistory();
 
     let emptyProduct = { category: 'Meat', name: '', price: 0, description: '', picture: '' };
     const [product, setProduct] = useState(emptyProduct);
@@ -13,9 +16,10 @@ const Create = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.handleCreate(product);
-        console.log(product);
+        console.log(product); // DELETE WHEN DONE
         setProduct(emptyProduct);
         event.target.reset();
+        history.push('/'); // redirects back to home page
     }
 
     return (
@@ -46,7 +50,7 @@ const Create = (props) => {
                 <div>Picture Preview: </div>
                 <img src={product.picture} />
                 <br />
-                <input type="submit" />
+                <input type="submit" value="Create" />
             </form>
         </div>
     )

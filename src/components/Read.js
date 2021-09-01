@@ -1,14 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Edit from './Edit';
 import './Read.css';
 
 const Read = (props) => {
+
     return (
         <div className="products">
-            {props.products.map(product => {
+            {props.products.sort((a, b) => (a.id > b.id) ? -1 : 1).map(product => {
                 return (
                     <>
                         <div className="product">
+                            <h4>ID: {product.id}</h4> {/* DELETE ME WHEN DONE */}
                             <h4>Category: {product.category}</h4>
                             <h4>Name: {product.name}</h4>
                             <h4>Price: ${product.price}</h4>
@@ -23,7 +26,12 @@ const Read = (props) => {
                             >
                                 Delete
                             </button>
-                            <Link to="/edit">
+                            <Link 
+                                to={{
+                                    pathname: "/edit/" + product.id,
+                                    state: product
+                                }}
+                            >
                             <button className="product_edit">
                                 Edit
                             </button>
