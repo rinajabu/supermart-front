@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 import './Header.css';
 
 const Header = (props) => {
+    
+    const [{cart}, dispatch] = useStateValue();
+
     return (
         <div className="header">
             <Link to='/'>
@@ -15,7 +19,11 @@ const Header = (props) => {
                     </Link>
                 </div>
                 <div className="header_cart">
-                    Cart: 0
+                    <Link to='/checkout'>
+                    <div className="header_cartButton">
+                        Cart: {cart?.length}
+                    </div>
+                    </Link>
                 </div>
             </div>
         </div>
