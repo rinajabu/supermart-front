@@ -11,7 +11,10 @@ const Checkout = (props) => {
     return (
         <div className="checkout">
             <div className="checkout_products">
-                <CheckoutProduct />
+                <h3>Your Cart Items</h3>
+                { cart.map(item => (
+                    <CheckoutProduct item={item} />
+                ))}
             </div>
             <div className="checkout_subtotal">
                 <Subtotal />
