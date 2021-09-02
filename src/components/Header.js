@@ -25,6 +25,13 @@ const Header = (props) => {
                     </div>
                     </Link>
                 </div>
+                {/* WORKING ONLY ON BACK END AND ONLY TO LOCALHOST */}
+                <div className="header_login">
+                    <a href="http://localhost:8000/login" target="_blank">Login</a>
+                </div>
+                <div className="header_signup">
+                    <a href="http://localhost:8000/register" target="_blank">Sign Up</a>
+                </div>
             </div>
         </div>
     )
