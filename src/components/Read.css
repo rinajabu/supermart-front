@@ -1,0 +1,8 @@
+.products_backToTop {
+    display: block;
+    margin: 1em auto;
+    text-align: center;
+    border: 1px solid lightslategrey;
+    width: 110px;
+    border-radius: 5px;
+}
