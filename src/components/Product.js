@@ -19,7 +19,7 @@ const Product = (props) => {
 
     return (
         <div className="product">
-            <h4>ID: {props.product.id}</h4>
+            {/* <h4>ID: {props.product.id}</h4> */}
             <h4>Category: {props.product.category}</h4>
             <h4>{props.product.name}</h4>
             <h4>${props.product.price}</h4>
