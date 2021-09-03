@@ -3,12 +3,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid darkgray;
     padding: 10px;
+    background-color: #002D62;
+}
+
+.header_dropdownMenu {
+    background-color: #002D62;
+    border: none;
+}
+
+.header_dropdown {
+    margin-left: 10px;
+}
+
+.header_dropdown:hover {
+    background-color: #002D62;
+    border: white;
+}
+
+.header_title, .header_cart > a {
+    color: white;
+    font-weight: 700;
+}
+
+.header_cart > a:hover, .header_title:hover {
+    color: #2f96fd;
+}
+
+.header_create {
+    color: black;
+    font-weight: normal;
 }
 
 .header_nav {
     display: flex;
     width: 50%;
-    justify-content: space-around;
+    justify-content: flex-end;
+    align-items: center;
 }
