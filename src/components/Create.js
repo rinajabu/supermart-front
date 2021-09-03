@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import './Create.css'
 import Form from 'react-bootstrap/Form'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
 
 const Create = (props) => {
 
@@ -26,33 +27,41 @@ const Create = (props) => {
     return (
         <div className="create">
             <h1>Add New Product</h1>
-            <form className="create_form" onSubmit={handleSubmit}>
-                <label htmlFor="category">Category</label>
-                <select onChange={handleChange} name="category" defaultValue={product.category}>
-                    <option value='Meat'>Meat</option>
-                    <option value='Fruits'>Fruits</option>
-                    <option value='Vegetables'>Vegetables</option>
-                    <option value='Seafood'>Seafood</option>
-                    <option value='Dairy'>Dairy</option>
-                    <option value='Bread'>Bread</option>
-                </select>
+            <Form className="create_form" onSubmit={handleSubmit}>
+            
+                <FloatingLabel htmlFor="category" label="Category" className="mb-3">
+                    <Form.Select onChange={handleChange} name="category" defaultValue={product.category}>
+                        <option value='Meat'>Meat</option>
+                        <option value='Fruits'>Fruits</option>
+                        <option value='Vegetables'>Vegetables</option>
+                        <option value='Seafood'>Seafood</option>
+                        <option value='Dairy'>Dairy</option>
+                        <option value='Bread'>Bread</option>
+                    </Form.Select>
+                </FloatingLabel>
+
+                <FloatingLabel label="Name" className="mb-3" htmlFor="name">
+                    <Form.Control type="text" name="name" onChange={handleChange} required />
+                </FloatingLabel>
+
+                <FloatingLabel label="Price" className="mb-3" htmlFor="price"> 
+                    <Form.Control type="number" name="price" onChange={handleChange} required />
+                </FloatingLabel>
+
+                <FloatingLabel label="Description" className="mb-3" htmlFor="description"> 
+                    <Form.Control type="text" name="description" onChange={handleChange} required />
+                </FloatingLabel>
+
+                <FloatingLabel label="Product Picture URL" className="mb-3" htmlFor="picture"> 
+                    <Form.Control type="url" name="picture" onChange={handleChange} required />
+                </FloatingLabel>
+
+                <div>Picture Preview</div>
                 <br />
-                <label htmlFor="name">Name: </label>
-                <input type="text" name="name" onChange={handleChange} required />
-                <br />
-                <label htmlFor="price">Price: </label>
-                <input type="number" name="price" onChange={handleChange} required />
-                <br />
-                <label htmlFor="description">Description: </label>
-                <input type="text" name="description" onChange={handleChange} required />
-                <br />
-                <label htmlFor="picture">Product Picture: </label>
-                <input type="url" name="picture" onChange={handleChange} maxLength="1000" required />
-                <div>Picture Preview: </div>
                 <img src={product.picture} />
-                <br />
-                <input type="submit" value="Create" />
-            </form>
+                <br/>
+                <input type="submit" className="btn btn-primary" value="Create" />
+            </Form>
         </div>
     )
 }
