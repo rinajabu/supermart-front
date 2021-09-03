@@ -1,0 +1,27 @@
+.footer {
+    background: #002D62;
+    padding: 10px;
+}
+
+.footer > h4 {
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: white;
+}
+
+.footer_logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.footer_logosContainer {
+    background: white;
+    width: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
