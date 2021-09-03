@@ -17,8 +17,7 @@ const CheckoutProduct = (props) => {
     return (
         <div className="checkoutProduct">
             <img src={props.item.picture} />
-            <p className="checkoutProduct_category">Category: {props.item.category}</p>
-            <p className="checkoutProduct_name">Name: {props.item.name}</p>
+            <p className="checkoutProduct_name">{props.item.name}</p>
             <p className="checkoutProduct_price">${props.item.price}</p>
             <button onClick={removeFromCart}>Remove from Cart</button>
         </div>
