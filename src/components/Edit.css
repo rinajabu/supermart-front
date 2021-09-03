@@ -1,3 +1,26 @@
+.edit > h1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.edit_form {
+    width: 90%;
+    margin: 1em auto;
+}
+
+.edit_form > div {
+    text-align: center;
+}
+
 .edit_form > img {
-    width: 300px;
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.edit_form > input[type="submit"] {
+    margin: 0 auto;
+    display: block;
 }
