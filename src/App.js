@@ -9,11 +9,31 @@ import Header from './components/Header';
 import Edit from './components/Edit';
 import Filter from './components/Filter';
 import Checkout from './components/Checkout';
+import Login from './components/Login';
+import apiClient from './services/api';
 
 const App = () => {
 
     let [products, setProducts] = useState([]);
     const [filterBy, setFilterby] = useState('All');
+    const [user, setUser] = useState({});
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const handleLogout = () => {
+        apiClient.post('/logout').then(response => {
+            if (response.status === 204) {
+            setIsLoggedIn(false);
+            }
+        })
+    }
+
+    const handleLogin = () => {
+        setIsLoggedIn(true);
+    }
+
+    const handleSetUser = (username) => {
+        setUser(username);
+    }
 
     const handleCreate = async (addProduct) => {
         try {
@@ -77,6 +97,11 @@ const App = () => {
                         />
                     </Route>
                     <Route path="/">
+                        <Login 
+                            handleLogout={handleLogout}
+                            handleLogin={handleLogin}
+                            handleSetUser={handleSetUser} 
+                        />
                         <Filter 
                             filterBy={filterBy}
                             updateFilter={updateFilter}
