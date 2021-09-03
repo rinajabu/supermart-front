@@ -1,10 +1,26 @@
+.create > h1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
 .create_form {
     width: 90%;
     margin: 1em auto;
+}
+
+.create_form > div {
+    text-align: center;
 }
 
 .create_form > img {
     object-fit: contain;
     width: 200px;
     height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.create_form > input[type="submit"] {
+    margin: 0 auto;
+    display: block;
 }
