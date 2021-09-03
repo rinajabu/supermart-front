@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router';
 import { useHistory } from 'react-router-dom';
 import './Edit.css'
+import Form from 'react-bootstrap/Form'
+import FloatingLabel from 'react-bootstrap/FloatingLabel'
 
 const Edit = (props) => {
 
@@ -22,35 +24,43 @@ const Edit = (props) => {
     }
 
     return (
-        <div>
+        <div className="edit">
             <h1>Edit Product</h1>
-            <form className="edit_form" onSubmit={handleSubmit}>
-                <label htmlFor="category">Category</label>
-                <select onChange={handleChange} name="category" defaultValue={editProduct.category}>
-                    <option value='Meat'>Meat</option>
-                    <option value='Fruits'>Fruits</option>
-                    <option value='Vegetables'>Vegetables</option>
-                    <option value='Seafood'>Seafood</option>
-                    <option value='Dairy'>Dairy</option>
-                    <option value='Bread'>Bread</option>
-                </select>
-                <br />
-                <label htmlFor="name">Name: </label>
-                <input type="text" name="name" onChange={handleChange} defaultValue={editProduct.name} required />
-                <br />
-                <label htmlFor="price">Price: </label>
-                <input type="number" name="price" onChange={handleChange} defaultValue={editProduct.price} required />
-                <br />
-                <label htmlFor="description">Description: </label>
-                <input type="text" name="description" onChange={handleChange} defaultValue={editProduct.description} required />
-                <br />
-                <label htmlFor="picture">Product Picture: </label>
-                <input type="url" name="picture" onChange={handleChange} defaultValue={editProduct.picture} required />
-                <div>Picture Preview: </div>
+            <Form className="edit_form" onSubmit={handleSubmit}>
+
+                <FloatingLabel htmlFor="category" label="Category" className="mb-3">
+                    <Form.Select onChange={handleChange} name="category" defaultValue={editProduct.category}>
+                        <option value='Meat'>Meat</option>
+                        <option value='Fruits'>Fruits</option>
+                        <option value='Vegetables'>Vegetables</option>
+                        <option value='Seafood'>Seafood</option>
+                        <option value='Dairy'>Dairy</option>
+                        <option value='Bread'>Bread</option>
+                    </Form.Select>
+                </FloatingLabel>
+
+                <FloatingLabel label="Name" className="mb-3" htmlFor="name">
+                    <Form.Control type="text" name="name" onChange={handleChange} defaultValue={editProduct.name} required />
+                </FloatingLabel>
+
+                <FloatingLabel label="Price" className="mb-3" htmlFor="price"> 
+                    <Form.Control type="number" name="price" onChange={handleChange} defaultValue={editProduct.price} required />
+                </FloatingLabel>
+
+                <FloatingLabel label="Description" className="mb-3" htmlFor="description"> 
+                    <Form.Control type="text" name="description" onChange={handleChange} defaultValue={editProduct.description} required />
+                </FloatingLabel>
+
+                <FloatingLabel label="Product Picture URL" className="mb-3" htmlFor="picture"> 
+                    <Form.Control type="url" name="picture" onChange={handleChange} defaultValue={editProduct.picture} required />
+                </FloatingLabel>
+
+                <div>Picture Preview</div>
                 <img src={editProduct.picture} />
                 <br />
-                <input type="submit" value="Edit" />
-            </form>
+                <input type="submit" className="btn btn-warning" value="Edit" />
+
+            </Form>
         </div>
     )
 }
