@@ -1,10 +1,11 @@
 import React from 'react'
+import './Filter.css'
 
 const Filter = (props) => {
     return (
         <label className='filter'>
-            <strong>Filter By Category: </strong>
-            <select className='filter_dropdowan' defaultValue={props.filterBy} onChange={props.updateFilter}>
+            <strong>Filter By Category</strong>
+            <select className='filter_dropdown' defaultValue={props.filterBy} onChange={props.updateFilter}>
                 <option value='All'>All</option>
                 <option value='Meat'>Meat</option>
                 <option value='Fruits'>Fruits</option>

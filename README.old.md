@@ -14,7 +14,8 @@
         - useContext (state management)
     - Javascript
     - CSS
-    - Material UI
+        - Bootstrap
+        - Material UI
 
 # Struggles
 - struggled with PHP and Laravel setting up the back end
@@ -35,4 +36,5 @@
 # Things to Work On
 - I would like to make it so repeat items in my cart, group together instead of rendering separately
 - Getting auth working
+    - able to get login and sign up working on the back end, need to connect it to my front end somehow; gonna hop in TA hours
 - Moving state that I use in multiple components into my useContext like my products
