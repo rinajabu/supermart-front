@@ -36,6 +36,8 @@ h4:last-of-type {
     width: 140px;
     height: 140px;
     margin: 10px 0;
+    border-bottom: 1px solid lightslategrey;
+    padding-bottom: 5px;
 }
 
 .product_buttons {

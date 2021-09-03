@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Edit from './components/Edit';
 import Filter from './components/Filter';
 import Checkout from './components/Checkout';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -88,6 +89,7 @@ const App = () => {
                         />
                     </Route>
                 </Switch>
+                <Footer />
             </div>
       </Router>
     )
