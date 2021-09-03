@@ -1,3 +1,10 @@
+.create_form {
+    width: 90%;
+    margin: 1em auto;
+}
+
 .create_form > img {
-    width: 300px;
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
 }

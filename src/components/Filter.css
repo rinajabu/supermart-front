@@ -1,0 +1,11 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.filter_dropdown {
+    margin-top: 5px;
+}
