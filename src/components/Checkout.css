@@ -1,4 +1,30 @@
 .checkout {
-    display: flex;
     justify-content: space-around;
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.checkout_products, .checkout_subtotal {
+    width: 45%;
+    margin-top: 10px;
+}
+
+.checkout_products > h3 {
+    border-bottom: 1px solid lightslategrey;
+}
+
+.checkout_empty {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #002D62;
+}
+
+.checkout_backToTop {
+    display: block;
+    margin: 1em auto;
+    text-align: center;
+    border: 1px solid lightslategrey;
+    width: 110px;
+    border-radius: 5px;
 }

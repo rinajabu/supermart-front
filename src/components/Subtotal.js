@@ -1,4 +1,5 @@
 import React from 'react';
+import './Subtotal.css'
 import CurrencyFormat from "react-currency-format";
 import { useHistory } from 'react-router-dom';
 import { cartTotal } from '../reducer';
@@ -21,8 +22,9 @@ const Subtotal = (props) => {
         <div className="subtotal">
             <CurrencyFormat 
                 renderText={(value) => (
-                    <div>
-                        Subtotal ({cart.length} items): {value}
+                    <div className="subtotal_total">
+                        <span>Total ({cart.length} items): </span>
+                        <span>{value}</span>
                     </div>
                 )}
                 decimalScale={2}
