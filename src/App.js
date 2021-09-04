@@ -10,6 +10,7 @@ import Edit from './components/Edit';
 import Filter from './components/Filter';
 import Checkout from './components/Checkout';
 import Footer from './components/Footer';
+import TopCarousel from './components/TopCarousel';
 
 const App = () => {
 
@@ -78,6 +79,7 @@ const App = () => {
                         />
                     </Route>
                     <Route path="/">
+                        <TopCarousel products={products} />
                         <Filter 
                             filterBy={filterBy}
                             updateFilter={updateFilter}

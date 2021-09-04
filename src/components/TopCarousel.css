@@ -1,0 +1,9 @@
+/* .topcarousel_item {
+    width: 100%;
+} */
+
+.topcarousel_img {
+    object-fit: contain;
+    width: 100%;
+    height: 300px;
+}
