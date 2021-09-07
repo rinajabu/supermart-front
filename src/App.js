@@ -11,11 +11,17 @@ import Filter from './components/Filter';
 import Checkout from './components/Checkout';
 import Footer from './components/Footer';
 import TopCarousel from './components/TopCarousel';
+import Login from './components/Login';
 
 const App = () => {
 
     let [products, setProducts] = useState([]);
     const [filterBy, setFilterby] = useState('All');
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    const login = () => {
+        setLoggedIn(true);
+    }
 
     const handleCreate = async (addProduct) => {
         try {
@@ -80,6 +86,7 @@ const App = () => {
                     </Route>
                     <Route path="/">
                         <TopCarousel products={products} />
+                        <Login login={login} loggedIn={loggedIn} />
                         <Filter 
                             filterBy={filterBy}
                             updateFilter={updateFilter}
